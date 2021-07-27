@@ -1,3 +1,5 @@
+const path = require('path')
+
 const esLintConfig = {
   env: {
     es6: true,
@@ -12,6 +14,9 @@ const esLintConfig = {
     "eslint-plugin-import",
   ],
   globals: {},
+  rules: {
+    "import/no-extraneous-dependencies": ["error", {"packageDir": path.join(__dirname)}]
+  },
 };
 
 module.exports = esLintConfig;

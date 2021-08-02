@@ -15,7 +15,8 @@ const esLintConfig = {
   ],
   globals: {},
   rules: {
-    "import/no-extraneous-dependencies": ["error", {"packageDir": path.join(__dirname)}]
+    "import/no-extraneous-dependencies": ["error", {"packageDir": path.join(__dirname)}],
+    "func-names": "off",
   },
 };
 

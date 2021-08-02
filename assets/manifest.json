@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "浏览器扩展demo",
+  "version": "1.0.0",
+  "description": "简单的浏览器扩展demo",
+  "icons": {
+    "16": "asset/img/icon.png",
+    "48": "asset/img/icon.png",
+    "128": "asset/img/icon.png"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_icon": "asset/img/icon.png",
+    "default_title": "1234",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/contentscript.js"],
+      "css": ["css/contentcss.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": ["js/inject.js"],
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "omnibox": { "keyword": "go" },
+  "default_locale": "zh_CN",
+  "devtools_page": "devtools.html"
+}
